@@ -1,0 +1,7 @@
+services:
+  scicat-docs:
+    image: squidfunk/mkdocs-material
+    ports:
+      - 8000:8000
+    volumes:
+      - ./mkdocs:/docs
