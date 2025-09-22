@@ -3,6 +3,7 @@ channels:
   - conda-forge
 dependencies:
   - mkdocs-material
+  - glightbox
 
   # To allow installing extra packages with pip from a requirements.txt
   - python

@@ -72,7 +72,7 @@ To use this repository locally it is best to have `mkdocs-material` installed wi
 
 To build the conda environment use the following:
 ```bash
-conda create -n scicat-docs-template -f .github/mkdocs/environment.yml
+conda env create -n scicat-docs-template -f .github/mkdocs/environment.yml
 ```
 Once the environment has been built then you can activate it with:
 ```bash
