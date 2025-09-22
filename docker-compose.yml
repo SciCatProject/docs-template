@@ -1,7 +1,8 @@
 services:
   scicat-docs:
     image: squidfunk/mkdocs-material
+    command: serve --config-file=/docs/.github/mkdocs/mkdocs.yml
     ports:
       - 8000:8000
     volumes:
-      - ./mkdocs:/docs
+      - ${PWD}:/docs

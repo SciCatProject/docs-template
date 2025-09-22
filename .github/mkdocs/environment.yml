@@ -1,0 +1,11 @@
+name: scicat-docs
+channels:
+  - conda-forge
+dependencies:
+  - mkdocs-material
+
+  # To allow installing extra packages with pip from a requirements.txt
+  - python
+  - pip
+  - pip:
+    - -r file:requirements.txt

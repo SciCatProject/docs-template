@@ -1,5 +1,5 @@
 site_name: SciCat Documentation
-docs_dir: docs
+docs_dir: ../../docs
 
 nav: 
   - Home: index.md
@@ -9,9 +9,9 @@ nav:
 theme:
   name: material
   palette:
-    primary: blue
+    primary: indigo
     accent: light-blue
-  logo: ./assets/SciCat-logo-icon.png
+  logo: .assets/SciCat-logo-icon.png
   features:
    - instant
 
