@@ -1,11 +1,6 @@
 site_name: SciCat Documentation
 docs_dir: ../../docs
 
-nav: 
-  - Home: index.md
-  - About:
-      - about/index.md
-
 theme:
   name: material
   palette:
@@ -15,6 +10,11 @@ theme:
   features:
    - instant
 
+# If you are using awesome pages please comment out this section
+nav:
+  - Home: index.yml
+  - About: about/index.yml
+
 extra:
   version:
     provider: mike
@@ -22,8 +22,9 @@ extra:
 plugins:
   - search
   - glightbox
-  - awesome-pages:
-      collapse_single_pages: true
+  # If you want to use awesome-pages uncomment this plugin and delete the "nav" section.
+  # - awesome-pages:
+  #     collapse_single_pages: true
   - mike
   - section-index
 

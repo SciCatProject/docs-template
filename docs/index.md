@@ -1,2 +1,2 @@
-# Index
+# Home
 Welcome to our documentation
