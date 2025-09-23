@@ -14,7 +14,7 @@ It includes:
 ## Default
 The default way of using this repository is to use it in a new project as a template repository. It will set up the docs structure and workflows for you.
 
-To edit the documentation of your new repository, write `.md` files inside the `docs` directory.
+To edit the documentation of your new repository, write `.md` files inside its `docs` directory.
 
 ### Editing the mkdocs.yml
 **Structuring the docs**
@@ -68,26 +68,12 @@ You will then need to add the following `publish-mkdocs.yml` workflow to your `.
 
 # Local Testing
 
-To use this repository locally it is best to have `mkdocs-material` installed with a conda environment. Due to supporting complex documentation set-ups it is difficult to provide a containerized solution in this case.
+To use this repository locally, just clone the repo and run
 
 To build the conda environment use the following:
 ```bash
-conda env create -n scicat-docs-template -f .github/mkdocs/environment.yml
-```
-Once the environment has been built then you can activate it with:
-```bash
-conda activate
-```
-
-To build your documentation first open the `.github/mkdocs/mkdocs.yml` file and check that the `docs_dir` is pointing to the correct relative path of your documentation, the default is `../../docs`.
-
-To build the documentation run:
-```bash
-mkdocs build --config-file .github/mkdocs/mkdocs.yml
-```
-To server the site run:
-```bash
-mkdocs serve --config-file .github/mkdocs/mkdocs.yml
-```
+docker compose up -d
 
 Then navigate to `localhost:8000`in your web browser to see the docs.
+
+All following changes in the `docs` repo and/or in the `.github/mkdocs` config files (e.g. mkdocs.yaml), will be mirrored on localhost:8000.
