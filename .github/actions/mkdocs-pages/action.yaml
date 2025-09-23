@@ -38,6 +38,10 @@ runs:
         sparse-checkout: |
           ${{ inputs.docs_folder }}
           ${{ inputs.docs_folder && '.github' }}
+    - name: Copy defaults to docs folder
+      run: |
+        cp -rn ${{ github.action_path }}/default-docs/. 'docs/.';
+        cp -rn ${{ github.action_path }}/. '.github/mkdocs/';
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
