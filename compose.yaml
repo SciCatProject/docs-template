@@ -5,8 +5,8 @@ services:
       - 8000:8000
     volumes:
       - ./docs:/docs
-      - ./.github/mkdocs/docs:/default
-      - ./.github/mkdocs:/.github/mkdocs
+      - ./.github/actions/mkdocs-pages/default-docs:/default
+      - ./.github/actions/mkdocs-pages:/.github/mkdocs
     entrypoint:
       - sh
       - -c
