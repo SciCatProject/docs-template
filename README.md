@@ -16,12 +16,13 @@ The default way of using this repository is to use it as an action in the reposi
 
 To use this in your repository copy `./.github/workflows/publish-docs.yml` into a folder into the `.github/workflows/` folder in your repository. [./.github/workflows/publish-docs.yml](./.github/workflows/publish-docs.yml) is an example of the use of the action.
 
-To extend the documentation
+To extend the documentation you can use a `docs` directory or a `README.md` file.
+### Use a docs directory
 
-1) **Use a docs directory**in the root directory of your repository. Then you can add markdown files to this folder. To use add your new files to the docs you will need to copy the file [./.github/actions/mkdocs-pages/mkdocs.yml](./.github/actions/mkdocs-pages/mkdocs.yml) to your repository in a `.github/actions/mkdocs` directory. From here add to the `nav` panel to add your new docs. See the [example](#example-1)
-2) **Use a README.md** file. The actions will pick this up immediately and render it into mkdocs form. You can use several files called README.md in nested folders and the docs will automatically pick it up for you to read.
+Make a `docs` directory in the root directory of your repository and add markdown files to it. To use add your new files to the docs you will need to copy the file [./.github/actions/mkdocs-pages/mkdocs.yml](./.github/actions/mkdocs-pages/mkdocs.yml) to your repository in a `.github/actions/mkdocs` directory. From here add to the `nav` panel to add your new docs.
 
-### Example 1
+**Example**
+
  Given a folder structure like this add markdown files to the `docs`
 ```
  ├── .github/
@@ -45,7 +46,7 @@ To extend the documentation
 
 You can override any of the settings from your repo, by placing configurations in the `./github/mkdocs` folder in your repo and documentation in your `docs` folder. For example, if your repository has a `./github/mkocs/mkdocs.yml` this will take precedence over [./.github/actions/mkdocs-pages/mkdocs.yml](./.github/actions/mkdocs-pages/mkdocs.yml). 
 
-Please note that adding new files in `docs` requires changing the `nav` in `./github/mkocs/mkdocs.yml`, so it's likely that whenever changing `docs` also having `./github/mkocs/mkdocs.yml` will be required.
+Please note that adding new files in `docs` requires changing the `nav` in `./github/mkocs/mkdocs.yml`. When you add to `docs` you will require `./github/mkocs/mkdocs.yml` to add these pages to the navigation see [here](#use-a-docs-directory).
 
 ## Merging defaults and dedicated settings
 
@@ -63,10 +64,9 @@ site_name: my-site-name
 
 To use this repository locally, just clone the repo and run
 
-To build the conda environment use the following:
 ```bash
 docker compose up -d
-
-Then navigate to `localhost:8000`in your web browser to see the docs.
+```
+Then navigate to `localhost:8000` in your web browser to see the docs.
 
 All following changes in the `docs` repo and/or in the `.github/mkdocs` config files (e.g. mkdocs.yaml), will be mirrored on localhost:8000.
