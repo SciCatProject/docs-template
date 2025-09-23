@@ -14,7 +14,32 @@ It includes:
 ## Default
 The default way of using this repository is to use it as an action in the repository of interest. This will apply the configuration from [./.github/actions/mkdocs-pages/](./.github/actions/mkdocs-pages/), which contains defautls from `navigations`, `assets` and `styles` 
 
-[./.github/workflows/publish-docs.yml](./.github/workflows/publish-docs.yml) is an example of the use of the action.
+To use this in your repository copy `./.github/workflows/publish-docs.yml` into a folder into the `.github/workflows/` folder in your repository. [./.github/workflows/publish-docs.yml](./.github/workflows/publish-docs.yml) is an example of the use of the action.
+
+To extend the documentation
+
+1) **Use a docs directory**in the root directory of your repository. Then you can add markdown files to this folder. To use add your new files to the docs you will need to copy the file [./.github/actions/mkdocs-pages/mkdocs.yml](./.github/actions/mkdocs-pages/mkdocs.yml) to your repository in a `.github/actions/mkdocs` directory. From here add to the `nav` panel to add your new docs. See the [example](#example-1)
+2) **Use a README.md** file. The actions will pick this up immediately and render it into mkdocs form. You can use several files called README.md in nested folders and the docs will automatically pick it up for you to read.
+
+### Example 1
+ Given a folder structure like this add markdown files to the `docs`
+```
+ ├── .github/
+ │   ├── actions
+ |   |   └── mkdocs/
+ │   │         └── mkdocs.yml
+ │   └── workflows/publish-docs.yml
+ ├── docs/>    └──Example.md
+```
+ Once you have added your documentation you need to add it to the navigation on the `.github/actions/mkdocs/mkdocs.yml`. Open the file and add your page in the nav section:
+ ```yaml
+ INHERIT: mkdocs-default.yml
+ nav:
+   - index.md
+   - Example.md
+   - About: about/index.md
+ ```
+
 
 ## Using dedicated mkdocs settings
 
