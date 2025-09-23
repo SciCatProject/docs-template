@@ -22,6 +22,18 @@ You can override any of the settings from your repo, by placing configurations i
 
 Please note that adding new files in `docs` requires changing the `nav` in `./github/mkocs/mkdocs.yml`, so it's likely that whenever changing `docs` also having `./github/mkocs/mkdocs.yml` will be required.
 
+## Merging defaults and dedicated settings
+
+To ease the use of defautls and override the required portions only, the local `./github/mkocs/mkdocs.yml` can use the INHERIT mechanism defined by mkdocs and inherit defaults from the [./.github/actions/mkdocs-pages/mkdocs-default.yml](./.github/actions/mkdocs-pages/mkdocs-default.yml), like this one [./.github/actions/mkdocs-pages/mkdocs.yml](./.github/actions/mkdocs-pages/mkdocs.yml).
+
+For example, to change the site name, the repo using the action should have a file `./.github/mkdocs/mkdocs.yml` with content:
+
+```yaml
+INHERIT: mkdocs-default.yml
+
+site_name: my-site-name
+```
+
 # Local Testing
 
 To use this repository locally, just clone the repo and run
