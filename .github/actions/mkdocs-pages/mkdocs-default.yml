@@ -10,11 +10,6 @@ theme:
   features:
    - instant
 
-# If you are using awesome pages please comment out this section
-nav:
-  - Home: index.md
-  - About: about/index.md
-
 extra:
   version:
     provider: mike
@@ -46,5 +41,5 @@ markdown_extensions:
 
 extra_css:
   - css/custom.css
-# hooks:
-#   - relative_to.py
+hooks:
+  - relative_to.py
