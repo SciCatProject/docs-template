@@ -9,62 +9,18 @@ It includes:
    *  MkDocs Material theme setup for professional-looking documentation
    *  Flexibility to accommodate different documentation structures from embedded README.md files to `docs` directories.
 
-# Using the Docs-Template Repository
+# Adding to an existing repository
 
 ## Default
-The default way of using this repository is to use it in a new project as a template repository. It will set up the docs structure and workflows for you.
+The default way of using this repository is to use it as an action in the repository of interest. This will apply the configuration from [./.github/actions/mkdocs-pages/](./.github/actions/mkdocs-pages/), which contains defautls from `navigations`, `assets` and `styles` 
 
-To edit the documentation of your new repository, write `.md` files inside its `docs` directory.
+[./.github/workflows/publish-docs.yml](./.github/workflows/publish-docs.yml) is an example of the use of the action.
 
-### Editing the mkdocs.yml
-**Structuring the docs**
-You can add structure the documentation by adding the names of the files to the `nav` section inside `mkdocs.yml`. See the example of adding a "Getting Started" page to your docs:
-```yaml
-nav:
-  - Home: index.md
-  - Getting Started: getting-started.md
-  - About:
-      - about/index.md
-```
-**Updating the site-name**
-Your site name will have a default of "SciCat Documentation"
+## Using dedicated mkdocs settings
 
-To update this open the `mkdocs.yml` and update the variable `site_name:` to the preferred name of your site.
+You can override any of the settings from your repo, by placing configurations in the `./github/mkdocs` folder in your repo and documentation in your `docs` folder. For example, if your repository has a `./github/mkocs/mkdocs.yml` this will take precedence over [./.github/actions/mkdocs-pages/mkdocs.yml](./.github/actions/mkdocs-pages/mkdocs.yml). 
 
-## Adding to an existing repository
-### Repositories with no existing documentation
-To add to an existing repository you can copy the `.github/mkdocs` and `docs` locally to your repository. Follow the structure
-
-```
-.
-├── .github/
-│   ├── mkdocs/
-│   │   └── mkdocs.yml
-│   └── workflows/
-├── docs/
-    ├── index.md
-    ├── about.md
-
-
-```
-You can now write your documentation in markdown and store it in the docs folder. You can structure it using the `nav` [section](#editing-the-mkdocsyml)
-
-You will also need to copy the `publish-docs.yml` to your `.github/workflows` folder.
-
-### Repositories with existing documentation
-
-For repositories with existing documentation copy the folder `.github/mkdocs` into your repository under the top directory. Open the file `.github/mkdocs/mdocs.yml` and change the `do
-`docs_dir` path to the path to your current documentation:
-```yaml
-site_name: SciCat Documentation
-docs_dir: `..\..\my_docs`
-```
-You can also update the `nav` to include the structure of your directories see [here](#editing-the-mkdocsyml) for an example.
-
-You will then need to add the following `publish-mkdocs.yml` workflow to your `.github/workflows` folder.
-
-## Advanced
-
+Please note that adding new files in `docs` requires changing the `nav` in `./github/mkocs/mkdocs.yml`, so it's likely that whenever changing `docs` also having `./github/mkocs/mkdocs.yml` will be required.
 
 # Local Testing
 
