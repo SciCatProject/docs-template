@@ -41,6 +41,13 @@ Make a `docs` directory in the root directory of your repository and add markdow
    - About: about/index.md
  ```
 
+### Using nested README.md
+
+If you want to use a nested `README.md` structure for your documentation create the following `mkdocs.yml` in `.github/mkdocs/mkdocs.yml`.
+```yaml
+INHERIT: mkdocs-nested.yml
+```
+The nested implementation uses the package `awesome-pages` which collapses down folders with single files to a single web page.
 
 ## Using dedicated mkdocs settings
 

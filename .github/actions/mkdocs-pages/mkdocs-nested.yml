@@ -10,10 +10,6 @@ theme:
   features:
    - instant
 
-nav:
-  - Home: README.md
-  - About: about/README.md
-
 extra:
   version:
     provider: mike
@@ -21,6 +17,8 @@ extra:
 plugins:
   - search
   - glightbox
+  - awesome-pages:
+     collapse_single_pages: true
   - mike
   - section-index
 
