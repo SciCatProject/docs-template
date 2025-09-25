@@ -26,13 +26,13 @@ Make a `docs` directory in the root directory of your repository and add markdow
  Given a folder structure like this add markdown files to the `docs`
 ```
  ├── .github/
- │   ├── actions
- |   |   └── mkdocs/
+ │   ├── mkdocs/
  │   │         └── mkdocs.yml
  │   └── workflows/publish-docs.yml
- ├── docs/>    └──Example.md
+ ├── docs/
+         └──Example.md
 ```
- Once you have added your documentation you need to add it to the navigation on the `.github/actions/mkdocs/mkdocs.yml`. Open the file and add your page in the nav section:
+ Once you have added your documentation you need to add it to the navigation on the `.github/mkdocs/mkdocs.yml`. Open the file and add your page in the nav section:
  ```yaml
  INHERIT: mkdocs-default.yml
  nav:
