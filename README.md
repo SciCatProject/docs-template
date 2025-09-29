@@ -20,7 +20,7 @@ To extend the documentation you can use a `docs` directory or a `README.md` file
 
 ### Use a docs directory
 
-Make a `docs` directory in the root directory of your repository and add markdown files to it. To use add your new files to the docs you will need to copy the file [./.github/actions/mkdocs-pages/mkdocs.yml](./.github/actions/mkdocs-pages/mkdocs.yml) to your repository in a `.github/actions/mkdocs` directory. From here add to the `nav` panel to add your new docs.
+Make a `docs` directory in the root directory of your repository and add markdown files to it. To change the order of your Contents sidebar you will need to copy [./.github/actions/mkdocs-pages/mkdocs.yml](./.github/actions/mkdocs-pages/mkdocs.yml) to your repository in a `.github/actions/mkdocs` directory. From here add to the `nav` panel to add your new docs.
 
 **Example**
 
@@ -68,7 +68,7 @@ INHERIT: mkdocs-default.yml
 site_name: my-site-name
 ```
 
-If your pages setup requires additional Python packages, you can specify them in [.github/mkdocs/requirements.txt](.github/mkdocs/requirements.txt) The action will install these dependencies automatically.
+If your Pages setup requires additional Python packages, you can specify them in [.github/mkdocs/requirements.txt](.github/mkdocs/requirements.txt) The action will install these dependencies automatically. This replaces [.github/actions/mkdocs-pages/requirements.txt](.github/mkdocs/requirements.txt) rather than adding to it, therefore you must include all the original dependencies in your `requirements.txt`
 
 # Local Testing
 
@@ -105,17 +105,13 @@ The following inputs can be provided to customize the behavior of this action:
 | Input Name | Description | Required | Type | Default |
 | ---------- |----------| -------| ------| ------|
 | GITHUB_TOKEN | GitHub token used for authentication when pushing changes. | true | string | N/A |
-| TAG | Commit, tag, or branch to use for generating GitHub links. | false | string | ${{ github.ref_name }} |
+| TAG | populates a dropdown on the Github pages showing the version | false | string | ${{ github.ref_name }} |
 | DOCS_LINK_CHECK | A string that triggers the documentation link check. | false | bool | false |
 | docs_folder | Path to the folder containing the documentation files. | false |string | 'docs' |
 
 
 
-Notes:
-
-    If docs_folder is not provided, the action will assume that all documentation files are in a fresh 'docs' directory.
-
-    The TAG input defaults to the name of the current Git reference.
+> Notes: If docs_folder is not provided, the action will assume that all documentation files are in a fresh 'docs' directory. The TAG input defaults to the name of the current Git reference.
 
 
 Outputs
