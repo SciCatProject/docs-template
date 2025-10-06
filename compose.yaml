@@ -1,0 +1,18 @@
+services:
+  mkdocs:
+    image: squidfunk/mkdocs-material:9.6
+    ports:
+      - 8000:8000
+    volumes:
+      - ./docs:/docs
+      - ./.github/actions/mkdocs-pages/default-docs:/default
+      - ./.github/actions/mkdocs-pages:/.github/mkdocs
+    entrypoint:
+      - sh
+      - -c
+    command:
+      - >-
+        cp -rn /default/* /docs/ &&
+        pip install -r /.github/mkdocs/requirements.txt &&
+        mkdocs serve --config-file /.github/mkdocs/mkdocs.yml
+        --dev-addr=0.0.0.0:8000
