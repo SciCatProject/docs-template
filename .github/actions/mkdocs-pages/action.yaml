@@ -69,6 +69,6 @@ runs:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         GIT_COMMITTER_NAME: ci-bot
         GIT_COMMITTER_EMAIL: ci-bot@example.com
-        DOCS_CONFIG: .github/mkdocs/mkdocs.yaml
+        DOCS_CONFIG: .github/mkdocs/mkdocs.yml
         TAG: ${{ inputs.TAG }}
         DOCS_LINK_CHECK: ${{ inputs.DOCS_LINK_CHECK }}
