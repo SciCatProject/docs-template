@@ -7,8 +7,8 @@ on:  # yamllint disable-line rule:truthy
     tags:
       - v*
   pull_request:
-    branches:
-     - main
+    # branches:
+    #  - main
 
 jobs:
   build:
