@@ -47,6 +47,9 @@ runs:
       uses: actions/setup-python@v5
       with:
         python-version: 3.x
+    - name: Install linux dependencies for lxml
+      shell: bash
+      run: apt install libxml2 libxslt
     - name: Install dependencies
       shell: bash
       run: |
