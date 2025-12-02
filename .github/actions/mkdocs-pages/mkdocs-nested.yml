@@ -16,7 +16,7 @@ extra:
 
 plugins:
   - search
-  - glightbox
+  #- glightbox
   - awesome-pages:
      collapse_single_pages: true
   - mike

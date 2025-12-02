@@ -20,7 +20,7 @@ extra:
 
 plugins:
   - search
-  - glightbox
+  #- glightbox
   - mike
   - section-index
 
