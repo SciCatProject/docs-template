@@ -49,7 +49,7 @@ runs:
         python-version: 3.x
     - name: Install linux dependencies for lxml
       shell: bash
-      run: apt install libxml2 libxslt
+      run: sudo apt-get update && apt-get install -y libxml2 libxslt
     - name: Install dependencies
       shell: bash
       run: |
