@@ -1,0 +1,16 @@
+name: Build docs
+
+on:  # yamllint disable-line rule:truthy
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  docs-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/mkdocs-pages
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          docs_folder: ''
