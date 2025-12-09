@@ -10,10 +10,6 @@ theme:
   features:
    - instant
 
-nav:
-  - Home: README.md
-  - About: about/README.md
-
 extra:
   version:
     provider: mike
