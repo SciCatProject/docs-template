@@ -1,5 +1,4 @@
 INHERIT: mkdocs-default.yml
-# nav:
-#   - index.md
-#   - Example.md
-#   - About: about/index.md
+nav:
+  - Home: README.md
+  - About: about/README.md
