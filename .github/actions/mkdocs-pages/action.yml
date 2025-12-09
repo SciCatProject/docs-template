@@ -22,6 +22,10 @@ inputs:
     description: docs folder path. If empty, it checkouts all to a fresh 'docs'
     type: string
     default: docs
+  docs_config:
+    description: mkdocs config file path
+    type: string
+    default: .github/mkdocs/mkdocs.yml
 
 runs:
   using: composite
@@ -69,6 +73,6 @@ runs:
         GITHUB_TOKEN: ${{ inputs.GITHUB_TOKEN }}
         GIT_COMMITTER_NAME: ci-bot
         GIT_COMMITTER_EMAIL: ci-bot@example.com
-        DOCS_CONFIG: .github/mkdocs/mkdocs.yml
+        DOCS_CONFIG: ${{ input.docs_config }}
         TAG: ${{ inputs.TAG }}
         DOCS_LINK_CHECK: ${{ inputs.DOCS_LINK_CHECK }}
