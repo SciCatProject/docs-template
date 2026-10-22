@@ -15,7 +15,7 @@ jobs:
   check-pr-title:
     runs-on: ubuntu-slim
     steps:
-      - uses: thehanimo/pr-title-checker@v2.0.0
+      - uses: thehanimo/pr-title-checker@b69bc3a841cf4e3cfef2d822625d8c90a588e9da # v2.0.0
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           pass_on_octokit_error: false
