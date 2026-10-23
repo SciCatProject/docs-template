@@ -11,7 +11,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: SciCatProject/docs-template/.github/actions/mkdocs-pages@7f67d9c6fdfe01024a326a15abca27a79d16acdc # main
+      - uses: SciCatProject/docs-template/.github/actions/mkdocs-pages@062778348b1e0daf6ac3af5ff4b73c97dff7f8b9 # main
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           push: true
