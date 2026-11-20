@@ -4,5 +4,11 @@
     "config:recommended",
     ":semanticCommits",
     "helpers:pinGitHubActionDigests"
+  ],
+  "packageRules": [
+    {
+      "matchDepNames": ["/^scicatproject/docs-template$/i"],
+      "enabled": false
+    }
   ]
 }
